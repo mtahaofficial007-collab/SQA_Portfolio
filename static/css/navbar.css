@@ -1,0 +1,84 @@
+/* General Navbar Styling */
+.navbar {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 60px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+
+/* Left Column - Gradient Text */
+.brand-gradient {
+  font-size: 1.4rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.5px;
+}
+
+/* Center Column - Links */
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 32px;
+}
+
+.nav-center a {
+  position: relative;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-center a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  transition: width 0.3s ease;
+}
+
+.nav-center a:hover {
+  color: #6a11cb;
+}
+
+.nav-center a:hover::after {
+  width: 100%;
+}
+
+/* Right Column - Gradient Button */
+.consult-btn {
+  background: linear-gradient(135deg, #6a11cb, #a944ff);
+  border: none;
+  padding: 10px 26px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1rem;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.4s ease;
+  box-shadow: 0 4px 12px rgba(106, 17, 203, 0.3);
+}
+
+.consult-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  background: linear-gradient(135deg, #f80bc4, #6a11cb); /* gradient flips */
+  box-shadow: 0 8px 20px rgba(108, 0, 117, 0.45);
+}

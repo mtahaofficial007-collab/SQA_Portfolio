@@ -1,0 +1,157 @@
+{% include "partials/header.html" %}
+{% include "partials/navbar.html" %}
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <h2 class="hero-greet">Hi, I am</h2>
+    <h2>
+      <span class="typing-text"></span><span class="cursor"></span>
+    </h2>
+
+    <p class="hero-desc">
+      I am a passionate Quality Assurance Engineer with expertise in ensuring software excellence through meticulous testing and process optimization. Skilled in both manual and automation testing, I focus on delivering bug-free, reliable, and user-friendly applications.
+    </p>
+
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="stat-value">15+</span>
+        <span class="stat-label">Projects Completed</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">2+</span>
+        <span class="stat-label">Years Experience</span>
+      </div>
+    </div>
+
+    <!-- Download CV Button -->
+    <a href="your-cv.pdf" class="cv-btn" download>Download CV</a>
+
+    <!-- Social Icons -->
+    <div class="hero-socials">
+      <a href="https://linkedin.com/in/your-profile" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com/your-profile" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- About Section (Second Hero Section) -->
+<section class="about-section">
+  <div class="about-container">
+    <!-- Left Side: Image -->
+    <div class="about-image">
+      <img src="{{ url_for('static', filename='images/image2.png') }}" alt="Muhammad Taha Khurram">
+    </div>
+
+    <!-- Right Side: Content -->
+    <div class="about-content">
+      <h2 class="about-heading">About Me</h2>
+      <p class="about-text">
+        I am <strong>Muhammad Taha Khurram</strong>, a dedicated 
+        <span class="highlight">Quality Assurance Engineer</span> with a passion for 
+        crafting seamless user experiences through rigorous testing. With expertise in both 
+        <strong>manual</strong> and <strong>automation testing</strong>, I ensure that every project 
+        I work on is reliable, efficient, and ready to scale.
+      </p>
+
+      <!-- Highlight Cards -->
+      <div class="about-highlights">
+        <div class="highlight-card">
+          <h3>Expertise</h3>
+          <p>Manual Testing, Automation, Test Case Design, Bug Tracking.</p>
+        </div>
+        <div class="highlight-card">
+          <h3>Focus Areas</h3>
+          <p>Web & Mobile Apps, Functional Testing, Performance Optimization.</p>
+        </div>
+      </div>
+
+      <!-- Call To Action -->
+      <a href="#contact" class="about-btn">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- Third Hero Section -->
+<section class="services-hero">
+  <div class="services-container">
+    <h2 class="services-heading">What I Can Do For You</h2>
+    <p class="services-desc">
+      I deliver high-quality software testing solutions ensuring your applications are bug-free, reliable, and scalable. Whether it’s Manual Testing, Automation, or QA Consultation, I provide end-to-end support for software excellence.
+    </p>
+
+    <div class="services-cards">
+      <div class="service-card">
+        <i class="fas fa-bug"></i>
+        <h3>Manual Testing</h3>
+        <p>Detailed test case creation and execution to catch every possible bug and improve software quality.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-robot"></i>
+        <h3>Automation Testing</h3>
+        <p>Automation scripts for regression and repetitive tasks to save time and ensure consistent results.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-chart-line"></i>
+        <h3>QA Consultation</h3>
+        <p>Providing process optimization, QA best practices, and strategy guidance for high-quality software delivery.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Ready to Collaborate Section -->
+<section class="collab-hero">
+  <div class="collab-container">
+    <h2 class="collab-heading">Ready to Collaborate?</h2>
+    <p class="collab-subtitle">
+      Let's create something amazing together. If you have a project or idea, I’m just a click away.
+    </p>
+    <a href="mailto:your-email@example.com" class="collab-btn">Get in Touch</a>
+
+    <!-- Floating accent circles -->
+    <span class="float-circle circle1"></span>
+    <span class="float-circle circle2"></span>
+    <span class="float-circle circle3"></span>
+  </div>
+</section>
+
+
+<section class="testimonials-section">
+  <h2 class="testimonials-heading">What Clients Say</h2>
+
+  <div class="testimonials-container">
+    <!-- Testimonial 1 -->
+    <div class="testimonial-card">
+        <p class="testimonial-text">
+          "Working with Muhammad Taha Khurram was a game-changer for our QA processes. His meticulous attention to detail and automation expertise improved our software reliability dramatically. Highly recommend for any project requiring top-notch QA!"
+        </p>
+        <h4 class="testimonial-name">Momentum</h4>
+        <span class="testimonial-role">CEO, Momentum</span>
+      </div>
+
+    <!-- Testimonial 2 -->
+    <div class="testimonial-card">
+        <p class="testimonial-text">
+          "Muhammad Taha's QA services transformed the way we approach quality. From manual testing to automation, his skills ensured our releases were always flawless. Our SEO tools now perform seamlessly thanks to his testing expertise!"
+        </p>
+        <h4 class="testimonial-name">SEO For Purpose</h4>
+        <span class="testimonial-role">Founder, SEO For Purpose</span>
+      </div>
+
+    <!-- Testimonial 3 -->
+    <div class="testimonial-card">
+        <p class="testimonial-text">
+          "The dedication and professionalism shown by Muhammad Taha Khurram in our projects was outstanding. He delivered thorough testing and clear reports that helped us enhance product quality and user experience significantly."
+        </p>
+        <h4 class="testimonial-name">Meeha</h4>
+        <span class="testimonial-role">Product Manager, Meeha</span>
+      </div>
+  </div>
+</section>
+
+
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+<script src="{{ url_for('static', filename='js/home.js') }}"></script>
+{% include "partials/footer.html" %}
