@@ -1,18 +1,200 @@
-<!-- Services Page Template -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Services</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
-</head>
-<body>
-    {% include 'partials/header.html' %}
-    {% include 'partials/navbar.html' %}
-    <main>
-        <h2>Our Services</h2>
-    </main>
-    {% include 'partials/footer.html' %}
-    <script src="/assets/js/main.js"></script>
-</body>
-</html>
+{% include 'partials/header.html' %}
+{% include 'partials/navbar.html' %}
+   
+<!-- Services Hero Section -->
+<section class="services-hero">
+  <div class="services-container">
+    <h1 class="services-heading">Quality Engineering That Drives Excellence</h1>
+    <p class="services-desc">
+      Ensuring your software is bug-free, reliable, and scalable through cutting-edge 
+      testing strategies, automation frameworks, and continuous quality practices.
+    </p>
+  </div>
+</section>
+
+<!-- Services Cards Section -->
+<section class="services-section">
+  <div class="services-container">
+
+    <!-- Section Heading -->
+    <h2 class="section-heading">Services We Provide</h2>
+    <p class="section-desc">
+      From manual checks to advanced automation and performance testing, 
+      I ensure your software delivers quality at every stage.
+    </p>
+
+    <div class="services-cards">
+      
+      <!-- Manual Testing -->
+      <div class="service-card">
+        <i class="fas fa-vial"></i>
+        <h3>Manual Testing</h3>
+        <p>
+          Comprehensive functional and exploratory testing to uncover 
+          hidden defects before release.
+        </p>
+      </div>
+
+      <!-- Automation Testing -->
+      <div class="service-card">
+        <i class="fas fa-robot"></i>
+        <h3>Automation Testing</h3>
+        <p>
+          Robust automation frameworks (Selenium, Cypress, Playwright) 
+          for faster regression cycles.
+        </p>
+      </div>
+
+      <!-- API Testing -->
+      <div class="service-card">
+        <i class="fas fa-plug"></i>
+        <h3>API Testing</h3>
+        <p>
+          Validating backend APIs for performance, security, and 
+          seamless integration across systems.
+        </p>
+      </div>
+
+      <!-- Performance Testing -->
+      <div class="service-card">
+        <i class="fas fa-tachometer-alt"></i>
+        <h3>Performance Testing</h3>
+        <p>
+          Load and stress testing to ensure your application 
+          scales under peak traffic.
+        </p>
+      </div>
+
+      <!-- Security Testing -->
+      <div class="service-card">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Security Testing</h3>
+        <p>
+          Identifying vulnerabilities and securing your software 
+          against potential cyber threats.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Skill Set Section -->
+<section class="skills-section">
+  <div class="services-container">
+
+    <!-- Section Heading -->
+    <h2 class="section-heading">Skill Set</h2>
+    <p class="section-desc">
+      A diverse technical toolkit that empowers me to deliver high-quality solutions 
+      across testing, automation, and DevOps pipelines.
+    </p>
+
+    <div class="skills-grid">
+      <div class="skill-card"><i class="devicon-selenium-original"></i> Selenium</div>
+      <div class="skill-card"><i class="devicon-playwright-plain"></i> Playwright</div>
+      <div class="skill-card"><i class="devicon-cypressio-plain"></i> Cypress</div>
+      <div class="skill-card"><i class="devicon-jenkins-line"></i> Jenkins</div>
+      <div class="skill-card"><i class="devicon-gitlab-plain"></i> GitLab</div>
+      <div class="skill-card"><i class="devicon-java-plain"></i> Java</div>
+      <div class="skill-card"><i class="devicon-javascript-plain"></i> JavaScript</div>
+      <div class="skill-card"><i class="devicon-python-plain"></i> Python</div>
+      <div class="skill-card"><i class="devicon-docker-plain"></i> CI/CD Pipelines </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Proven Results Section -->
+<section class="results-hero">
+  <div class="results-container">
+
+    <!-- Section Heading -->
+    <h2 class="section-heading">Proven Results</h2>
+    <p class="section-desc">
+      Demonstrating consistent excellence in quality engineering with measurable outcomes.
+    </p>
+
+    <!-- Stats Inline -->
+    <div class="results-stats">
+
+      <!-- Projects Delivered -->
+      <div class="stat-item">
+        <h3 class="result-number">15+</h3>
+        <p>Projects Delivered</p>
+      </div>
+
+      <!-- Test Cases Executed -->
+      <div class="stat-item">
+        <h3 class="result-number">3K+</h3>
+        <p>Test Cases Executed</p>
+      </div>
+
+      <!-- Automation Coverage -->
+      <div class="stat-item">
+        <h3 class="result-number">85%</h3>
+        <p>Automation Coverage</p>
+      </div>
+
+      <!-- Client Satisfaction -->
+      <div class="stat-item">
+        <h3 class="result-number">95%</h3>
+        <p>Client Satisfaction</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!<!-- ========================= -->
+<!-- Our Process Section       -->
+<!-- ========================= -->
+<section class="process-section">
+  <div class="process-container">
+    <h2 class="section-heading">Our Process</h2>
+    <p class="section-desc">
+      A streamlined approach to deliver high-quality results.
+    </p>
+
+    <div class="process-steps">
+      <div class="process-card">
+        <i class="devicon-jira-plain icon"></i> <!-- Planning icon added -->
+        <h3>Planning</h3>
+        <p>Defining scope, requirements, and strategies to ensure a strong foundation.</p>
+      </div>
+
+      <div class="process-card">
+        <i class="devicon-figma-plain icon"></i>
+        <h3>Design</h3>
+        <p>Crafting user-friendly, scalable, and modern designs for the system.</p>
+      </div>
+
+      <div class="process-card">
+        <i class="devicon-react-original icon"></i>
+        <h3>Development</h3>
+        <p>Building reliable solutions with cutting-edge technologies.</p>
+      </div>
+
+      <div class="process-card">
+        <i class="devicon-jest-plain icon"></i>
+        <h3>Testing</h3>
+        <p>Ensuring seamless performance with functional, automation, and performance tests.</p>
+      </div>
+       <div class="process-card">
+        <i class="devicon-linux-plain icon"></i> <!-- Maintenance icon -->
+        <h3>Maintenance</h3>
+        <p>Ensuring continuous support, updates, and smooth operation post-deployment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/services.css') }}">  
+{% include 'partials/footer.html' %}
