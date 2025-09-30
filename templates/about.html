@@ -1,20 +1,71 @@
-<!-- About Page Template -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>About</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
-</head>
-<body>
-    {% include 'partials/header.html' %}
-    {% include 'partials/navbar.html' %}
-    <main>
-        <h2>About Us</h2>
-    </main>
-    {% include 'partials/footer.html' %}
-   <script src="{{ url_for('static', filename='js/footer-reveal.js') }}"></script>
+{% include "partials/header.html" %}
+{% include "partials/navbar.html" %}
+<!-- About Intro Section -->
+<section class="about-intro">
+    <div class="about-photo">
+        <img src="/static/images/dp.jpg" alt="Muhammad Taha Khurram">
+    </div>
+    <div class="about-details">
+        <h2>Muhammad Taha</h2>
+        <h3>Software Quality Assurance Engineer</h3>
+        <p>
+            Hi, i’m a passionate QA Engineer with 2+ years of experience specializing in test automation and CI/CD
+            integration. Proficient in designing and executing end-to-end testing strategies using Selenium and advanced
+            API testing tools. Expertise includes implementing quality gates via Jenkins and GitHub within continuous
+            delivery pipelines to ensure rapid, high-quality software deployment.
+        </p>
+        <div class="about-highlights">
+            <div class="highlight">QA Engineering</div>
+            <div class="highlight">Automation</div>
+            <div class="highlight">Problem Solver</div>
+            <div class="highlight">Tech Explorer</div>
+        </div>
+    </div>
+
+    <!-- Actions Section -->
+    <div class="about-actions">
+        <a href="your-cv.pdf" download class="download-btn">
+            <i class="fas fa-download"></i> Download CV
+        </a>
+        <div class="social-links">
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" class="glow-icon">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/yourusername" target="_blank" class="glow-icon">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </div>
+</section>
 
 
-</body>
-</html>
+<!-- Stats Section -->
+<section class="about-stats">
+    <div class="stats-header">
+        <h2>My Achievements</h2>
+        <p>
+            Over the years, I’ve successfully delivered impactful projects, built
+            long-term client relationships, and contributed to multiple outsource
+            collaborations.
+        </p>
+    </div>
+
+    <div class="stats-container">
+        <div class="stat-card">
+            <h3>15+</h3>
+            <p>Total Projects Done</p>
+        </div>
+        <div class="stat-card">
+            <h3>5+</h3>
+            <p>Total Clients</p>
+        </div>
+        <div class="stat-card">
+            <h3>10+</h3>
+            <p>Outsource Contributions</p>
+        </div>
+    </div>
+</section>
+
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+{% include "partials/footer.html" %}

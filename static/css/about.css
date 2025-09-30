@@ -1,0 +1,384 @@
+/* ============================ */
+/* About Intro Section Styles   */
+/* ============================ */
+.about-intro {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0a0a0a, #111);
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    padding: 60px 40px;
+    /* reduced from 100px 60px */
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    align-items: center;
+    gap: 40px;
+    /* reduced from 60px */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated glowing background (same as services hero) */
+.about-intro::before {
+    content: "";
+    position: absolute;
+    top: -40%;
+    left: -40%;
+    width: 180%;
+    height: 180%;
+    background: conic-gradient(from 180deg, #6a11cb, #2575fc, #a944ff, #6a11cb);
+    animation: rotate-bg 20s linear infinite;
+    z-index: 0;
+    opacity: 0.08;
+    filter: blur(120px);
+}
+
+/* Ensure content stays above background */
+.about-photo,
+.about-details,
+.about-actions {
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes rotate-bg {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Floating circular photo with glowing border */
+.about-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-photo img {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid transparent;
+    background: linear-gradient(135deg, #6a11cb, #2575fc, #a944ff);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    animation: floatPhoto 5s ease-in-out infinite;
+    box-shadow: 0 0 30px rgba(106, 17, 203, 0.4);
+}
+
+@keyframes floatPhoto {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* About content */
+.about-details {
+    text-align: left;
+}
+
+.about-details h2 {
+    font-size: 2.4rem;
+    /* slightly smaller */
+    font-weight: 700;
+    margin-bottom: 2px;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-details h3 {
+    font-size: 1.3rem;
+    /* slightly smaller */
+    font-weight: 600;
+    margin-bottom: 8px;
+    /* reduced from 12px */
+    margin-top: 0;
+    line-height: 1.5;
+    color: #b3b3ff;
+
+    position: relative;
+    display: inline-block;
+}
+
+/* underline glow effect */
+.about-details h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(106, 17, 203, 0.6);
+}
+
+.about-details p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    /* tighter than 1.8 */
+    color: #aaa;
+    margin: 8px 0 18px;
+    /* reduced spacing */
+}
+
+/* Highlights */
+.about-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    /* reduced from 18px */
+    margin-bottom: 15px;
+    /* tighter layout */
+}
+
+.highlight {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 30px;
+    padding: 8px 16px;
+    /* smaller padding */
+    font-size: 0.9rem;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+.highlight:hover {
+    transform: translateY(-3px) scale(1.05);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 6px 18px rgba(106, 17, 203, 0.5);
+}
+
+/* Actions (CV + Socials) */
+.about-actions {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0;
+    /* was 10px → moved up */
+    text-align: center;
+    transform: translateY(-15px);
+    /* shift entire block upward */
+}
+
+/* Download CV Button */
+.download-btn {
+    display: inline-block;
+    padding: 14px 38px;
+    /* increased padding for larger button */
+    border-radius: 40px;
+    background: linear-gradient(135deg, #2575fc, #6a11cb);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    /* slightly bigger text */
+    box-shadow: 0 6px 18px rgba(37, 117, 252, 0.5);
+    transition: all 0.3s ease;
+    margin-bottom: 18px;
+    /* slightly more breathing room above icons */
+}
+
+.download-btn i {
+    margin-right: 8px;
+}
+
+.download-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    background: linear-gradient(135deg, #6a11cb, #a944ff);
+    box-shadow: 0 10px 24px rgba(106, 17, 203, 0.6);
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 14px;
+    /* reduced from 20px */
+}
+
+.glow-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    font-size: 1.2rem;
+    color: #bbb;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.glow-icon:hover {
+    color: #fff;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    box-shadow: 0 0 16px rgba(106, 17, 203, 0.8);
+    transform: translateY(-3px) scale(1.08);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .about-intro {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 40px 20px;
+        /* reduced for mobile */
+    }
+
+    .about-details {
+        text-align: center;
+    }
+
+    .about-highlights {
+        justify-content: center;
+    }
+
+    .about-actions {
+        grid-column: span 1;
+    }
+}
+
+/* ============================ */
+/* Stats Section Styles         */
+/* ============================ */
+.about-stats {
+    width: 100vw;
+    background: linear-gradient(135deg, #0a0a0a, #111);
+    padding: 100px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    font-family: "Poppins", sans-serif;
+    /* added */
+}
+
+/* Animated glowing background */
+.about-stats::before {
+    content: "";
+    position: absolute;
+    top: -40%;
+    left: -40%;
+    width: 180%;
+    height: 180%;
+    background: conic-gradient(from 180deg, #6a11cb, #2575fc, #a944ff, #6a11cb);
+    animation: rotate-bg 25s linear infinite;
+    opacity: 0.06;
+    filter: blur(150px);
+    z-index: 0;
+}
+
+.stats-header {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto 60px;
+    font-family: "Poppins", sans-serif;
+    /* ensure applied */
+}
+
+.stats-header h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "Poppins", sans-serif;
+    /* applied */
+}
+
+.stats-header p {
+    font-size: 1rem;
+    color: #bbb;
+    line-height: 1.6;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    /* applied */
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+    font-family: "Poppins", sans-serif;
+    /* applied */
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    padding: 40px 30px;
+    width: 240px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    transition: all 0.4s ease;
+    font-family: "Poppins", sans-serif;
+
+    /* Center content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* ensures text stays centered */
+}
+
+
+.stat-card:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 12px 28px rgba(106, 17, 203, 0.6);
+}
+
+.stat-card h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0 0 6px;
+    /* reduced bottom margin from 10px → 6px */
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "Poppins", sans-serif;
+}
+
+.stat-card p {
+    font-size: 1rem;
+    color: #ccc;
+    margin: 0;
+    /* removes extra space */
+    font-family: "Poppins", sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .stats-container {
+        gap: 20px;
+    }
+
+    .stat-card {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .stats-header h2 {
+        font-size: 2rem;
+    }
+}
