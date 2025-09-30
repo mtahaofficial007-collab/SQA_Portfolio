@@ -188,7 +188,7 @@
     /* slightly bigger text */
     box-shadow: 0 6px 18px rgba(37, 117, 252, 0.5);
     transition: all 0.3s ease;
-    margin-bottom: 18px;
+    margin-bottom: 25px;
     /* slightly more breathing room above icons */
 }
 
@@ -257,7 +257,7 @@
 /* Stats Section Styles         */
 /* ============================ */
 .about-stats {
-    width: 100vw;
+
     background: linear-gradient(135deg, #0a0a0a, #111);
     padding: 100px 40px;
     text-align: center;
@@ -267,7 +267,7 @@
     /* added */
 }
 
-/* Animated glowing background */
+/* Animated glowing background
 .about-stats::before {
     content: "";
     position: absolute;
@@ -280,15 +280,31 @@
     opacity: 0.06;
     filter: blur(150px);
     z-index: 0;
+} */
+
+.stats-header h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    /* reduced to bring divider closer */
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: "Poppins", sans-serif;
+    position: relative;
+    display: inline-block;
 }
 
-.stats-header {
-    position: relative;
-    z-index: 1;
-    max-width: 700px;
-    margin: 0 auto 60px;
-    font-family: "Poppins", sans-serif;
-    /* ensure applied */
+.stats-header h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    margin: 8px auto 0;
+    /* space above divider */
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    border-radius: 2px;
+    box-shadow: 0 0 10px rgba(106, 17, 203, 0.6);
 }
 
 .stats-header h2 {
@@ -306,10 +322,13 @@
     font-size: 1rem;
     color: #bbb;
     line-height: 1.6;
-    margin: 0;
+    margin: 40px auto;
+    /* reduced margin + auto centers */
     font-family: "Poppins", sans-serif;
-    /* applied */
+    max-width: 500px;
+    /* limits length */
 }
+
 
 .stats-container {
     display: flex;
@@ -380,5 +399,156 @@
 
     .stats-header h2 {
         font-size: 2rem;
+    }
+}
+
+/* ============================ */
+/* Expertise Section Styles     */
+/* ============================ */
+.expertise {
+    background: linear-gradient(135deg, #0a0a0a, #111);
+    padding: 90px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    font-family: "Poppins", sans-serif;
+}
+
+.expertise::before {
+    content: "";
+    position: absolute;
+    top: -40%;
+    left: -40%;
+    width: 180%;
+    height: 180%;
+    background: conic-gradient(from 180deg, #6a11cb, #2575fc, #a944ff, #6a11cb);
+    animation: rotate-bg 20s linear infinite;
+    z-index: 0;
+    opacity: 0.08;
+    filter: blur(120px);
+}
+
+.expertise-header {
+    max-width: 700px;
+    margin: 0 auto 50px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease forwards;
+}
+
+.expertise-header h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.expertise-header p {
+    font-size: 1rem;
+    color: #bbb;
+    line-height: 1.6;
+    margin: 0 auto 20px;
+    max-width: 600px;
+}
+
+.expertise-header .divider {
+    width: 90px;
+    height: 3px;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    margin: 18px auto 0;
+    border-radius: 2px;
+    box-shadow: 0 0 12px rgba(106, 17, 203, 0.6);
+}
+
+/* Skill Container */
+.expertise-container {
+    max-width: 850px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Individual Skill Card */
+.skill-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 25px 20px;
+    backdrop-filter: blur(10px);
+    transition: all 0.4s ease;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transform: translateX(-40px);
+    animation: slideIn 1s ease forwards;
+}
+
+.skill-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 10px 28px rgba(106, 17, 203, 0.6);
+    border-color: rgba(106, 17, 203, 0.6);
+}
+
+/* Title inside card */
+.skill-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+  color: #e0e0e0;
+  font-family: "Poppins", sans-serif;
+  text-transform: capitalize;
+}
+
+/* Skill Bar */
+.skill-bar {
+    width: 100%;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+.skill-fill {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #2575fc, #6a11cb);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 8px;
+    transition: width 2s ease;
+}
+
+/* Adjusted percentage styling */
+.skill-percent {
+  display: block;
+  margin-top: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.5px;
+}
+
+
+/* Animations */
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateX(0);
     }
 }
