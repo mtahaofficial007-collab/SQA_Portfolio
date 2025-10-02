@@ -111,6 +111,12 @@
   color: #bbb;
   font-size: 0.95rem;
 }
+.footer-phone {
+  margin-bottom: 16px;
+  color: #bbb;
+  font-size: 0.95rem;
+}
+
 
 /* Social Buttons */
 .footer-socials {
