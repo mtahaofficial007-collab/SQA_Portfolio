@@ -14,11 +14,11 @@
     <div class="footer-col">
       <h3 class="footer-heading">Links</h3>
       <ul class="footer-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/services">Services</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/portfolio">Portfolio</a></li>
-        <li><a href="/contact">Contact</a></li>
+        <li><a href="{{ url_for('home') }}" class="{% if request.endpoint == 'home' %}active{% endif %}">Home</a></li>
+        <li><a href="{{ url_for('services') }}" class="{% if request.endpoint == 'services' %}active{% endif %}">Services</a></li>
+        <li><a href="{{ url_for('about') }}" class="{% if request.endpoint == 'about' %}active{% endif %}">About</a></li>
+        <li><a href="{{ url_for('portfolio') }}" class="{% if request.endpoint == 'portfolio' %}active{% endif %}">Portfolio</a></li>
+        <li><a href="{{ url_for('contact') }}" class="{% if request.endpoint == 'contact' %}active{% endif %}">Contact</a></li>
       </ul>
     </div>
 
@@ -28,11 +28,10 @@
       <p class="footer-email">m.tahaofficial007@gmail.com</p>
       <p class="footer-phone">+92 331 5604180</p>
       <div class="footer-socials">
-        <a href="https://www.linkedin.com/in/muhammad-taha-khurram-2b77ba366/"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/mtahaofficial007-collab"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/muhammad-taha-khurram-2b77ba366/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/mtahaofficial007-collab" aria-label="GitHub"><i class="fab fa-github"></i></a>
       </div>
-      <!-- <button class="consult-btn">Book Consultation</button> -->
-      <a href="/contact" class="consult-btn">Book Consultation</a>
+      <a href="{{ url_for('contact') }}" class="consult-btn">Book Consultation</a>
     </div>
   </div>
 

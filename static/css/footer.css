@@ -198,3 +198,11 @@
   position: relative;
   z-index: 1;
 }
+
+.footer-links a.active {
+  color: #40009a;
+}
+
+.footer-links a.active::after {
+  width: 100%;
+}
