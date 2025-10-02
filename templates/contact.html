@@ -1,18 +1,193 @@
-<!-- Contact Page Template -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Contact</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
-</head>
-<body>
-    {% include 'partials/header.html' %}
-    {% include 'partials/navbar.html' %}
-    <main>
-        <h2>Contact Us</h2>
-    </main>
-    {% include 'partials/footer.html' %}
-    <script src="/assets/js/main.js"></script>
-</body>
-</html>
+{% include "partials/header.html" %}
+{% include "partials/navbar.html" %}
+
+<section class="contact-section">
+  <div class="contact-container">
+    <div class="contact-header">
+      <h2>Contact Me</h2>
+      <p>Have a project in mind? Fill out the form below and let’s collaborate!</p>
+      <div class="divider"></div>
+    </div>
+
+    <form class="contact-form">
+      <!-- Name -->
+      <div class="form-group">
+        <input type="text" placeholder="Your Name" required />
+      </div>
+
+      <!-- Email -->
+      <div class="form-group">
+        <input type="email" placeholder="Your Email" required />
+      </div>
+
+      <!-- Company -->
+      <div class="form-group">
+        <input type="text" placeholder="Company Name" />
+      </div>
+
+      <!-- Services -->
+      <div class="form-group select-wrapper">
+        <select required>
+          <option value="" disabled selected>Select Service</option>
+          <option>QA Engineering</option>
+          <option>Automation Testing</option>
+          <option>Performance Testing</option>
+          <option>Security Testing</option>
+        </select>
+        <span class="dropdown-icon"><i class="fas fa-chevron-down"></i></span>
+      </div>
+
+      <!-- Budget -->
+      <div class="form-group budget-group">
+        <!-- Currency dropdown -->
+        <div class="currency-wrapper">
+          <select required>
+            <option value="PKR">₨ PKR</option>
+            <option value="USD">$ USD</option>
+            <option value="EUR">€ EUR</option>
+          </select>
+        </div>
+        <!-- Budget input -->
+        <input type="number" min="15000" placeholder="Minimum 15000" required />
+      </div>
+
+      <!-- Project Details -->
+      <div class="form-group">
+        <textarea rows="5" placeholder="Project Details..." required></textarea>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="send-btn">
+        <i class="fas fa-paper-plane"></i> Send Message
+      </button>
+    </form>
+  </div>
+</section>
+
+
+<!-- Get in Touch Section -->
+<section class="get-in-touch">
+  <div class="touch-container">
+    <h2>Get in Touch</h2>
+    <p class="touch-desc">We’re here to help you with your projects. Reach out to us anytime.</p>
+    <div class="touch-items">
+      
+      <!-- Phone -->
+      <div class="touch-card">
+        <i class="fas fa-phone-alt"></i>
+        <h3>Phone</h3>
+        <p class="info">+92 331 5604180</p>
+        <small class="info-desc">Available Mon-Fri, 9am - 6pm</small>
+      </div>
+      
+      <!-- Email -->
+      <div class="touch-card">
+        <i class="fas fa-envelope"></i>
+        <h3>Email</h3>
+        <p class="info">m.tahaofficial007@gmail.com</p>
+        <small class="info-desc">Replies within 24 hours</small>
+      </div>
+      
+      <!-- Office -->
+      <div class="touch-card">
+        <i class="fas fa-building"></i>
+        <h3>Office</h3>
+        <p class="info">Everything is Online</p>
+        <small class="info-desc">Remote-first collaboration</small>
+      </div>
+      
+      <!-- Live Chat -->
+      <div class="touch-card">
+        <i class="fas fa-comments"></i>
+        <h3>Live Chat</h3>
+        <p class="info">Coming Soon</p>
+        <small class="info-desc">Real-time support planned</small>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+
+<!-- FAQ Section -->
+<section class="faq-section">
+  <div class="faq-container">
+    <h2>Frequently Asked Questions</h2>
+    <p class="faq-desc">Find quick answers to some of the most common questions we receive.</p>
+
+    <div class="faq-items">
+
+      <!-- FAQ 1 -->
+      <div class="faq-card">
+        <button class="faq-question">
+          What services do you provide? <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <p>We provide QA & Testing, Automation, Software Development, and Consulting services tailored to client needs.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="faq-card">
+        <button class="faq-question">
+          How long does a typical project take? <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Project timelines vary depending on scope, but on average range from 2 weeks to 3 months.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="faq-card">
+        <button class="faq-question">
+          What is the minimum budget to start a project? <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Our minimum project budget is <strong>15,000 PKR</strong> to ensure high-quality delivery.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="faq-card">
+        <button class="faq-question">
+          Do you work with international clients? <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Yes! We collaborate with clients globally through remote-first approaches and online tools.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="faq-card">
+        <button class="faq-question">
+          How can I contact you for a project? <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="faq-answer">
+          <p>You can reach out via our Contact form, Email, or upcoming Live Chat support.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Ready to Collaborate Section -->
+<section class="collaborate-section">
+  <div class="collaborate-container">
+    <h2>Ready to Collaborate?</h2>
+    <p class="collaborate-desc">
+      Let’s turn your ideas into reality with our expertise in QA, Automation, and Software Solutions.  
+      We’re just one click away from building something extraordinary together.
+    </p>
+    <a href="#contact" class="collaborate-btn">
+      <i class="fas fa-handshake"></i> Get Started
+    </a>
+  </div>
+</section>
+
+
+
+{% include "partials/footer.html" %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+<script src="{{ url_for('static', filename='js/contact.js') }}"></script>

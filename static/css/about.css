@@ -293,6 +293,8 @@
     font-family: "Poppins", sans-serif;
     position: relative;
     display: inline-block;
+    
+
 }
 
 .stats-header h2::after {
@@ -308,15 +310,21 @@
 }
 
 .stats-header h2 {
-    font-size: 2.4rem;
-    font-weight: 700;
-    margin-bottom: 15px;
-    background: linear-gradient(90deg, #6a11cb, #2575fc);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-family: "Poppins", sans-serif;
-    /* applied */
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  display: inline-block;
+
+  /* Shimmer Effect */
+  background: linear-gradient(90deg, #6a11cb, #2575fc, #a944ff, #6a11cb);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmerText 3s infinite linear;
 }
+
 
 .stats-header p {
     font-size: 1rem;
@@ -493,13 +501,13 @@
 
 /* Title inside card */
 .skill-card h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 12px;
-  letter-spacing: 0.5px;
-  color: #e0e0e0;
-  font-family: "Poppins", sans-serif;
-  text-transform: capitalize;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    color: #e0e0e0;
+    font-family: "Poppins", sans-serif;
+    text-transform: capitalize;
 }
 
 /* Skill Bar */
@@ -526,15 +534,15 @@
 
 /* Adjusted percentage styling */
 .skill-percent {
-  display: block;
-  margin-top: 10px;
-  font-size: 1rem;
-  font-weight: 700;
-  font-family: "Poppins", sans-serif;
-  background: linear-gradient(90deg, #6a11cb, #2575fc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing: 0.5px;
+    display: block;
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.5px;
 }
 
 
@@ -551,4 +559,272 @@
         opacity: 1;
         transform: translateX(0);
     }
+}
+
+
+/* ============================ */
+/* Professional Experience      */
+/* ============================ */
+.experience {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0a0a0a, #111);
+    color: #fff;
+    padding: 80px 40px;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Animated gradient background
+.experience::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  left: -40%;
+  width: 180%;
+  height: 180%;
+  background: conic-gradient(from 180deg, #6a11cb, #2575fc, #a944ff, #6a11cb);
+  animation: rotate-bg 25s linear infinite;
+  opacity: 0.06;
+  filter: blur(140px);
+  z-index: 0;
+} */
+
+.experience-header {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+.experience-header h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  font-family: "Poppins", sans-serif;
+
+  /* Shimmer Effect */
+  background: linear-gradient(90deg, #6a11cb, #2575fc, #a944ff, #6a11cb);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmerText 3s infinite linear;
+}
+
+
+.experience-header p {
+    font-size: 1rem;
+    color: #bbb;
+    line-height: 1.6;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+.experience-header .divider {
+    width: 90px;
+    height: 3px;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    margin: 18px auto 0;
+    border-radius: 2px;
+    box-shadow: 0 0 12px rgba(106, 17, 203, 0.6);
+}
+
+/* Timeline/Experience card */
+.experience-timeline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.experience-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 30px 25px;
+    max-width: 700px;
+    text-align: left;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    animation: fadeUp 1.2s ease forwards;
+    opacity: 0;
+    transform: translateY(40px);
+}
+
+.experience-card h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.experience-card h3 span {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #aaa;
+}
+
+.experience-card h4 {
+    font-size: 1rem;
+    color: #b3b3ff;
+    margin-bottom: 15px;
+}
+
+.experience-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.experience-card ul li {
+    font-size: 0.95rem;
+    color: #ccc;
+    margin-bottom: 10px;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 18px;
+}
+
+.experience-card ul li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: #6a11cb;
+}
+
+/* Animation */
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================ */
+/* Education Section Styles     */
+/* ============================ */
+.education {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0a0a0a, #111);
+    color: #fff;
+    padding: 80px 40px;
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.education::before {
+    content: "";
+    position: absolute;
+    top: -40%;
+    left: -40%;
+    width: 180%;
+    height: 180%;
+    background: conic-gradient(from 180deg, #6a11cb, #2575fc, #a944ff, #6a11cb);
+    animation: rotate-bg 25s linear infinite;
+    opacity: 0.06;
+    filter: blur(150px);
+    z-index: 0;
+}
+
+.education-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.education-heading {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.education-desc {
+    font-size: 1rem;
+    color: #bbb;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto 60px;
+}
+
+.education-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.edu-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 18px;
+    padding: 25px 30px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    text-align: left;
+    transition: all 0.4s ease;
+}
+
+.edu-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 12px 28px rgba(106, 17, 203, 0.6);
+}
+
+.edu-card h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #e0e0e0;
+}
+
+.edu-institute {
+    display: block;
+    font-size: 1rem;
+    color: #aaa;
+    margin-bottom: 5px;
+}
+
+.edu-year {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #6a11cb;
+    margin-bottom: 10px;
+}
+
+.edu-detail {
+    font-size: 0.95rem;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .education {
+        padding: 60px 20px;
+    }
+
+    .education-heading {
+        font-size: 2rem;
+    }
+
+    .edu-card {
+        padding: 20px;
+    }
+}
+@keyframes shimmerText {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
