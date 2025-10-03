@@ -1,0 +1,180 @@
+/* ========================= */
+/* Base Style (matches theme)*/
+/* ========================= */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #0a0a0a;
+    color: #fff;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ========================= */
+/* Portfolio Hero Section    */
+/* ========================= */
+.portfolio-hero {
+    background: linear-gradient(135deg, #0a0a0a, #111);
+    padding: 120px 40px 160px 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.portfolio-hero::before {
+    content: "";
+    position: absolute;
+    top: -40%;
+    left: -40%;
+    width: 180%;
+    height: 180%;
+    background: conic-gradient(from 180deg, #6a11cb, #2575fc, #a944ff, #6a11cb);
+    animation: rotate-bg 25s linear infinite;
+    z-index: 0;
+    opacity: 0.08;
+    filter: blur(140px);
+}
+
+@keyframes rotate-bg {
+    100% { transform: rotate(360deg); }
+}
+
+.portfolio-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-heading {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-desc {
+    font-size: 1.2rem;
+    color: #aaa;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* ========================= */
+/* Projects Section          */
+/* ========================= */
+.projects-section {
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #0a0a0a, #111);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 20px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(106, 17, 203, 0.15);
+    transition: all 0.5s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px) scale(1.04);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.8);
+    background: rgba(255,255,255,0.08);
+}
+
+.project-image {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 18px;
+    transition: all 0.4s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.06);
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.project-desc {
+    font-size: 1rem;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.project-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.project-tags .tag {
+    font-size: 0.85rem;
+    padding: 6px 14px;
+    background: rgba(106, 17, 203, 0.25);
+    border-radius: 14px;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.project-tags .tag:hover {
+    background: rgba(37, 117, 252, 0.6);
+}
+
+.project-details {
+    font-size: 0.95rem;
+    text-decoration: none;
+    color: #2575fc;
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.project-details:hover {
+    color: #6a11cb;
+    border-bottom: 1px solid #6a11cb;
+}
+
+/* ========================= */
+/* Responsive Design         */
+/* ========================= */
+@media (max-width: 1024px) {
+    .project-detail-section { gap: 20px; }
+}
+
+@media (max-width: 768px) {
+    .section-heading { font-size: 2rem; }
+    .section-desc { font-size: 1rem; }
+    .project-detail-info h2 { font-size: 1.4rem; }
+    .project-detail-info p,
+    .project-detail-info li { font-size: 0.9rem; }
+}

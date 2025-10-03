@@ -1,18 +1,48 @@
-<!-- Portfolio Page Template -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
-</head>
-<body>
     {% include 'partials/header.html' %}
     {% include 'partials/navbar.html' %}
-    <main>
-        <h2>My Portfolio</h2>
-    </main>
+
+    <!-- Portfolio Hero Section -->
+    <section class="portfolio-hero">
+        <div class="portfolio-container">
+            <h1 class="section-heading">My Projects</h1>
+            <p class="section-desc">A showcase of my recent work, highlighting proficiency in Software Quality Assurance. This includes tested web applications, validated UI/UX integrity, and effective test automation and defect management solutions.</p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section">
+        <div class="projects-grid">
+
+            <!-- Project 1 -->
+            <div class="project-card">
+                <img src="/static/images/project1.png" alt="Seo App Project" class="project-image">
+                <h3>SEO Master</h3>
+                <p class="project-desc">SEO Master Dashboard, a modern Flask-based web application designed to help users manage and optimize their SEO performance. </p>
+                <div class="project-tags">
+                    <span class="tag">Selenium</span>
+                    <span class="tag">Postman</span>
+                    <span class="tag">Jenkins</span>
+                    <span class="tag">JMeter</span>
+                </div>
+                <a href="/seo_helper_master" class="project-details">Details</a>
+            </div>
+
+            <!-- Project 2
+            <div class="project-card">
+                <img src="/" alt="Project 2" class="Times ECommerce Website">
+                <h3>Time Center Ecommerce</h3>
+                <p class="project-desc">Short description of Project 2 with key features and tech stack.</p>
+                <div class="project-tags">
+                    <span class="tag">React</span>
+                    <span class="tag">Bootstrap</span>
+                    <span class="tag">API</span>
+                </div>
+                <a href="/project2" class="project-details">Details</a>
+            </div> -->
+
+        </div>
+    </section>
+
     {% include 'partials/footer.html' %}
-    <script src="/assets/js/main.js"></script>
-</body>
-</html>
+    <script src="/assets/js/portfolio.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/portfolio.css') }}">

@@ -1,0 +1,33 @@
+    {% include 'partials/header.html' %}
+    {% include 'partials/navbar.html' %}
+
+    <section class="project-detail-hero">
+        <div class="project-detail-container">
+            <h1 class="section-heading">Project Title 2</h1>
+            <p class="section-desc">Full description of Project 2 with goals, features, and technologies used.</p>
+        </div>
+    </section>
+
+    <section class="project-detail-section">
+        <div class="project-detail-image">
+            <img src="/assets/images/project2.jpg" alt="Project 2">
+        </div>
+        <div class="project-detail-info">
+            <h2>Technologies Used</h2>
+            <div class="project-tags">
+                <span class="tag">React</span>
+                <span class="tag">Bootstrap</span>
+                <span class="tag">API</span>
+            </div>
+            <h2>Features</h2>
+            <ul>
+                <li>Feature 1 of Project 2</li>
+                <li>Feature 2 of Project 2</li>
+                <li>Feature 3 of Project 2</li>
+            </ul>
+            <a href="#" class="project-link" target="_blank">View Live Project</a>
+        </div>
+    </section>
+
+    {% include 'partials/footer.html' %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/portfolio.css') }}">
