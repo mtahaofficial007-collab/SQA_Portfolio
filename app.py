@@ -53,10 +53,10 @@ def project1():
     # return render_template('projects/project1.html') 
     # if you move them to templates/projects/
 
-@app.route('/project2')
+@app.route('/time_center')
 def project2():
     # Corrected: Looks for 'projects/project2.html'
-    return render_template('project2.html')
+    return render_template('time_center_ecommerce.html')
     # Or, if you want them treated as templates:
     # return render_template('projects/project2.html')
     # if you move them to templates/projects/
