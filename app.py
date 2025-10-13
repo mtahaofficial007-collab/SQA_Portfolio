@@ -12,7 +12,7 @@ app.secret_key = "supersecretkey"
 # ------------------------------------------------
 app.config.update(
     MAIL_SERVER='sandbox.smtp.mailtrap.io',
-    MAIL_PORT=587,
+    MAIL_PORT=2525,
     MAIL_USE_TLS=True,
     MAIL_USERNAME='36feb2aa59b160',  # replace with your Mailtrap username
     MAIL_PASSWORD='3c62203f444240',  # replace with your Mailtrap password
