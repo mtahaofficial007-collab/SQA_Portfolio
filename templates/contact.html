@@ -1,7 +1,7 @@
 {% include "partials/header.html" %}
 {% include "partials/navbar.html" %}
 
-<section class="contact-section">
+<section class="contact-section" id="contact">
   <div class="contact-container">
     <div class="contact-header">
       <h2>Contact Me</h2>
@@ -9,51 +9,49 @@
       <div class="divider"></div>
     </div>
 
-    <form class="contact-form">
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash-container">
+          {% for category, message in messages %}
+            <div class="alert alert-{{ category }}">{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <!-- Contact Form -->
+    <form class="contact-form" method="POST" action="/send_message">
       <!-- Name -->
       <div class="form-group">
-        <input type="text" placeholder="Your Name" required />
+        <input type="text" name="name" placeholder="Your Name" required />
       </div>
 
       <!-- Email -->
       <div class="form-group">
-        <input type="email" placeholder="Your Email" required />
+        <input type="email" name="email" placeholder="Your Email" required />
       </div>
 
       <!-- Company -->
       <div class="form-group">
-        <input type="text" placeholder="Company Name" />
+        <input type="text" name="company" placeholder="Company Name" />
       </div>
 
       <!-- Services -->
       <div class="form-group select-wrapper">
-        <select required>
+        <select name="service" required>
           <option value="" disabled selected>Select Service</option>
-          <option>QA Engineering</option>
-          <option>Automation Testing</option>
-          <option>Performance Testing</option>
-          <option>Security Testing</option>
+          <option value="QA Engineering">QA Engineering</option>
+          <option value="Automation Testing">Automation Testing</option>
+          <option value="Performance Testing">Performance Testing</option>
+          <option value="Security Testing">Security Testing</option>
         </select>
         <span class="dropdown-icon"><i class="fas fa-chevron-down"></i></span>
-      </div>
-
-      <!-- Budget -->
-      <div class="form-group budget-group">
-        <!-- Currency dropdown -->
-        <div class="currency-wrapper">
-          <select required>
-            <option value="PKR">₨ PKR</option>
-            <option value="USD">$ USD</option>
-            <option value="EUR">€ EUR</option>
-          </select>
-        </div>
-        <!-- Budget input -->
-        <input type="number" min="15000" placeholder="Minimum 15000" required />
-      </div>
+      </div>  
 
       <!-- Project Details -->
       <div class="form-group">
-        <textarea rows="5" placeholder="Project Details..." required></textarea>
+        <textarea name="details" rows="5" placeholder="Project Details..." required></textarea>
       </div>
 
       <!-- Submit Button -->
@@ -185,9 +183,9 @@
   </div>
 </section>
 
-
-
 {% include "partials/footer.html" %}
 
 <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
 <script src="{{ url_for('static', filename='js/contact.js') }}"></script>
+
+

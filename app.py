@@ -1,68 +1,113 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, flash, url_for
+from flask_mail import Mail, Message
 
-# The constructor for Flask automatically looks for a 'templates' folder
-# in the same directory as app.py
+# ------------------------------------------------
+# Flask App Configuration
+# ------------------------------------------------
 app = Flask(__name__)
 app.secret_key = "supersecretkey"
 
-# -----------------------
-# Frontend Routes
-# -----------------------
+# ------------------------------------------------
+# Email Configuration (Mailtrap SMTP)
+# ------------------------------------------------
+app.config.update(
+    MAIL_SERVER='sandbox.smtp.mailtrap.io',
+    MAIL_PORT=587,
+    MAIL_USE_TLS=True,
+    MAIL_USERNAME='36feb2aa59b160',  # replace with your Mailtrap username
+    MAIL_PASSWORD='3c62203f444240',  # replace with your Mailtrap password
+    MAIL_DEFAULT_SENDER=('Portfolio Contact', 'm.tahaofficial007@gmail.com')
+)
 
-# These all correctly look in 'templates'
+mail = Mail(app)
+
+
+# ------------------------------------------------
+# Frontend Routes
+# ------------------------------------------------
 @app.route('/')
 def home():
-    # Looks for 'templates/home.html'
-    return render_template('home.html') 
+    return render_template('home.html')
+
 
 @app.route('/about')
 def about():
-    # Looks for 'templates/about.html'
     return render_template('about.html')
+
 
 @app.route('/contact')
 def contact():
-    # Looks for 'templates/contact.html'
     return render_template('contact.html')
+
 
 @app.route('/services')
 def services():
-    # Looks for 'templates/services.html'
     return render_template('services.html')
+
 
 @app.route('/portfolio')
 def portfolio():
-    # Looks for 'templates/portfolio.html'
     return render_template('portfolio.html')
 
-# -----------------------
+
+# ------------------------------------------------
 # Portfolio Project Routes
-# -----------------------
-
-# Your project files are directly in the root 'SQA_PORTFOLIO' folder
-# not within 'templates', so these paths need correction.
-
+# ------------------------------------------------
 @app.route('/seo_helper_master')
 def project1():
-    # Corrected: Looks for 'projects/project1.html'
-    # NOTE: You'll likely want to move project1.html and project2.html 
-    # INTO the 'templates' folder, perhaps in a 'templates/projects' 
-    # subdirectory for consistency.
-    return render_template('seo_helper_master.html') 
-    # Or, if you want them treated as templates:
-    # return render_template('projects/project1.html') 
-    # if you move them to templates/projects/
+    return render_template('seo_helper_master.html')
+
 
 @app.route('/time_center')
 def project2():
-    # Corrected: Looks for 'projects/project2.html'
     return render_template('time_center_ecommerce.html')
-    # Or, if you want them treated as templates:
-    # return render_template('projects/project2.html')
-    # if you move them to templates/projects/
 
-# -----------------------
-# Run App (Python 3.11 safe)
-# -----------------------
+
+# ------------------------------------------------
+# Contact Form Handler (POST)
+# ------------------------------------------------
+@app.route('/send_message', methods=['POST'])
+def send_message():
+    name = request.form.get('name')
+    email = request.form.get('email')
+    company = request.form.get('company', 'N/A')
+    service = request.form.get('service')
+    details = request.form.get('details')
+
+    # Basic validation
+    if not name or not email or not service or not details:
+        flash("Please fill out all required fields before submitting.", "warning")
+        return redirect(url_for('contact'))
+
+    # Build email content
+    msg_body = f"""
+    📬 New message received from your portfolio site:
+
+    Name: {name}
+    Email: {email}
+    Company: {company}
+    Service: {service}
+
+    Message:
+    {details}
+    """
+
+    try:
+        msg = Message(subject="New Portfolio Contact Message", recipients=['m.tahaofficial007@gmail.com'])
+        msg.body = msg_body
+        mail.send(msg)
+
+        flash("Thank you for reaching out! Your message has been sent successfully.", "success")
+        return redirect(url_for('contact'))
+
+    except Exception as e:
+        print("Error sending email:", e)
+        flash("Something went wrong while sending your message. Please try again later.", "danger")
+        return redirect(url_for('contact'))
+
+
+# ------------------------------------------------
+# Run Flask App
+# ------------------------------------------------
 if __name__ == "__main__":
     app.run(debug=True, host="127.0.0.1", port=5000)
